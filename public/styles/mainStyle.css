@@ -3,6 +3,25 @@
     padding: 0px;
 }
 
+.cloud{
+    width: 100vw;
+    height: 80px;
+    opacity: 0%;
+    background-image: url(/public/images/cloud2.png);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.cloud:hover{
+    opacity: 100%;
+    transition: 0.2s;
+}
+
+.cloudHover{
+    opacity: 100%;
+    transition: 0.2s;
+}
+
 ::-webkit-scrollbar{
     width: 5px;
 }
@@ -36,6 +55,7 @@ body{
     background-color: #272930;
     padding: 10px 0px;
     margin-left: -4px;
+    z-index: 3;
 }
 
 .bannerLogoBox{
