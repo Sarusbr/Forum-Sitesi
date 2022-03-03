@@ -1,0 +1,46 @@
+function rain(){
+    let amount = 100;
+    let body = document.querySelector(".cloud");
+    let i = 0;
+    while(i<amount){
+        let drop =document.createElement("i");
+        let size=Math.random() * 3;
+        let posx= Math.floor(Math.random() * window.innerWidth);
+        let delay=Math.random() * -20;
+        let duration=Math.random() * 0.5;
+
+        drop.style.width = 0.2 + size+"px";
+        drop.style.left = posx  +"px";
+        drop.style.animationDelay = delay  +"s";
+        drop.style.animationDuration = 1+duration  +"s";
+        drop.style.zIndex=-5;
+        body.appendChild(drop);
+        i++;
+    }
+}
+
+var rainStatus = true;
+
+function controlRain(){
+    let cloud = document.getElementById("cloudID");
+    if(rainStatus){
+        rain();
+        cloud.classList.add("cloudHover");
+        rainStatus=false;
+    }
+    else{
+        cloud.classList.remove("cloudHover");
+        let body = document.querySelector(".cloud");
+        rainStatus=true;
+        body.innerHTML="";
+    }
+}
+
+function sunAndMoon(){
+    let sun = document.getElementById("sunAndMoon");
+    let back = document.querySelector("body");
+    sun.classList.toggle("sun");
+    sun.classList.toggle("moon");
+    back.classList.toggle("bodysun");
+    back.classList.toggle("bodymoon");
+}
