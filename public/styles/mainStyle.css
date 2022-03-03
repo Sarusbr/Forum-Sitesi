@@ -1,12 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #272930;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece{
+    background-color: aqua;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #7f8c8d;
     overflow-x: hidden;
+    overflow-y: visible;
 }
 
 /*değişken tanımlama*/
+
 :root{
-    --boyut:1200px; /*Ekran Boyutu*/
+    --boyut:1100px; /*Ekran Boyutu*/
     --boyut2:1160px;
 }
 
@@ -14,8 +34,8 @@ body{
     width: 100vw;
     height: 90px;
     background-color: #272930;
-    margin: -8px 0px 0px -8px;
     padding: 10px 0px;
+    margin-left: -4px;
 }
 
 .bannerLogoBox{
@@ -78,45 +98,37 @@ body{
     color: white;
 }
 
-.menuBoxContainer{
-    width: 100vw;
-    height: 90px;
-    margin: -8px 0px 0px -8px;
-    padding: 10px 0px;
-}
-
-.menuBox{
+.menu{
+    margin: auto;
     width: var(--boyut);
-    height: 40px;
-    margin: auto;
-    background-color: #272930;
     border-radius: 4px;
-    margin-top: 12px;
-}
-
-.menuBoxContent{
-    width: 1000px;
+    margin-top: 10px;
     height: 40px;
-    margin: auto;
-}
-
-.menuButtonBox{
-    width: 200px;
-    height: 29px;
-    padding-top: 11px;
-    color: white;
-    background-color: transparent;
-    transition: 0.4s;
-    float: left;
-    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
     text-align: center;
-    font-size: 16.5px;
+    background-image: linear-gradient(270deg,#272930 19.9%,transparent 19.9% 80.5%,#272930 80.5% 100%);
+    /*background-color: #272930;*/
+    color: white;
+
 }
 
-.menuButtonBox:hover{
-    background-color: white;
+.menu li{
+    display: inline-block;
+    padding: 0px 35px;
+    height: 40px;
+    background-color: #272930;
+    transition: 0.2s;
+    cursor: pointer;
+    line-height: 39.5px;
+    text-shadow: 0px 0px 2px white;
+}
+
+.menu li:hover{
+    background-color: transparent;
+    transition: 0.2s;
     color: black;
-    transition: 0.4s;
+    text-shadow: 0px 0px 5px red;
 }
 
 .ContentBox{
@@ -127,34 +139,17 @@ body{
     margin-top: 12px;
     padding: 20px 0px;
     height: auto;
+    height: 1000px;
     text-align: center;
 }
-
-.Contents{
-    width: 1160px;
-    height: auto;
-}
-
-.Content1{
-    width: 800px;
-    height: 1000px;
-    border-radius: 4px;
-    background-color: gainsboro;
-    float: left;
-}
-
-.Content2{
-    width: 340px;
-    height: 100px;
-    border-radius: 4px;
-    background-color: gainsboro;
-    float: right;
-    position: sticky;
-    top: 0%;
-}
 /*
-<div class="Contents">
-                <div class="Content1"></div>
-                <div class="Content2"></div>
-            </div>
+<div class="menuBox">
+        <div class="menuBoxContent">
+            <div class="menuButtonBox">NFT Nedir?</div>
+            <div class="menuButtonBox">Haberler</div>
+            <div class="menuButtonBox">Forum</div>
+            <div class="menuButtonBox">Kurallar</div>
+            <div class="menuButtonBox">Hakkımızda</div>
+        </div>
+    </div>
 */
