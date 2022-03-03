@@ -1,0 +1,38 @@
+.stickyBox{
+    display: block;
+    width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0%;
+    float: right;
+}
+
+.stickybox1{
+    display: block;
+    width: 300px;
+    height: auto;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: gray;
+    padding: 20px;
+    top: 0%;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.stickyBox h1{
+    font-size: 20px;
+}
+
+.stickyNewsText{
+    display: block;
+    margin-top: 20px;
+}
+
+.innerContentBox{
+    height: 1000px;
+    width: 740px;
+    background-color: gray;
+    border-radius: 4px;
+}

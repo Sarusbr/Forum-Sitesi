@@ -1,5 +1,5 @@
 function rain(){
-    let amount = 100;
+    let amount = 250;
     let body = document.querySelector(".cloud");
     let i = 0;
     while(i<amount){
