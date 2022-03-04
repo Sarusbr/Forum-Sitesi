@@ -93,7 +93,7 @@ body{
 }
 
 .bannerLogo:hover{
-    animation: logoanim 1s linear infinite;
+    animation: logoanim 2s linear infinite;
 }
 
 @keyframes logoanim{
