@@ -45,8 +45,7 @@ body{
 }
 
 .bodysun{
-    /*background-color: rgb(4, 204, 204);*/
-    background-image: linear-gradient(rgb(4, 204, 204),pink,white);
+    background-color: rgb(4, 204, 204);
     transition: 1s;
 }
 .bodymoon{
@@ -93,7 +92,7 @@ body{
 }
 
 .bannerLogo:hover{
-    animation: logoanim 2s linear infinite;
+    animation: logoanim 1s linear infinite;
 }
 
 @keyframes logoanim{
