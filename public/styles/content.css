@@ -1,11 +1,14 @@
 .stickyBox{
     display: block;
-    width: 300px;
-    height: auto;
+    width: 308px;
+    margin-right: -8px;
+    height: 100vh;
     box-sizing: border-box;
     position: sticky;
     top: 0%;
     float: right;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .stickybox1{
@@ -14,7 +17,7 @@
     height: auto;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: gray;
+    background-color: rgba(164, 176, 190,1.0);
     padding: 20px;
     top: 0%;
     color: white;
@@ -31,8 +34,39 @@
 }
 
 .innerContentBox{
-    height: 1000px;
+    height:2000px;
     width: 740px;
-    background-color: gray;
+    padding: 0px 0px; 
+    background-color: rgba(164, 176, 190,1.0);
+    border-radius: 4px;
+    color: white;
+}
+
+.innerContentBox h1{
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.titleBox{
+    height: auto;
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+    padding: 20px 0px;
+}
+
+.theNewsBox{
+    width: 740px;
+    height: 200px;
+    background-color: aqua;
+    transition: 0.2s;
+    border-radius: 0px;
+    margin: 5px 0px;
+    z-index: 1;
+}
+
+.theNewsBox:hover{
+    transform: scale(102%);
     border-radius: 4px;
 }
+
