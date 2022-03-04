@@ -34,9 +34,9 @@
 }
 
 .innerContentBox{
-    height:2000px;
+    height:auto;
     width: 740px;
-    padding: 0px 0px; 
+    padding-bottom: 20px; 
     background-color: rgba(164, 176, 190,1.0);
     border-radius: 4px;
     color: white;
@@ -49,8 +49,6 @@
 
 .titleBox{
     height: auto;
-    position: sticky;
-    top: 0%;
     z-index: 10;
     padding: 20px 0px;
 }
@@ -63,6 +61,8 @@
     border-radius: 0px;
     margin: 5px 0px;
     z-index: 1;
+    display: flex;
+    cursor: pointer;
 }
 
 .theNewsBox:hover{
@@ -70,3 +70,17 @@
     border-radius: 4px;
 }
 
+.newsTitle{
+    padding: 10px;
+}
+
+.bilgiler{
+    padding: 10px 25px;
+    flex-grow: 2;
+}
+
+.newsImage{
+    background-color: green;
+    height: 200px;
+    max-width: 800px;
+}
