@@ -44,3 +44,11 @@ function sunAndMoon(){
     back.classList.toggle("bodysun");
     back.classList.toggle("bodymoon");
 }
+
+function popupControl(){
+    var loginbox = document.getElementById("LoginPopupBox");
+    var popupbox = document.getElementById("PopupBackBox");
+    loginbox.classList.toggle("loginBoxOff");
+    loginbox.classList.toggle("loginBoxOn");
+    popupbox.classList.toggle("open");
+}

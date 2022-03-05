@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/public/styles/content.css">
 </head>
 <body class="bodysun">
+    <div id="LoginPopupBox" class="loginBoxOff"></div>
+    <div id="PopupBackBox" onclick="popupControl()" class="popupBackColor open"></div>
     <div id="sunAndMoon" class="sun" onclick="sunAndMoon()"></div>
     <div class="bannerBox">
         <div class="bannerContent">
@@ -18,7 +20,7 @@
             </div>
             <div class="bannerLoginBox">
                 <div class="bannerLoginButton"><div class="slider"></div>Register</div>
-                <div class="bannerLoginButton"><div class="slider"></div>Login</div>
+                <div class="bannerLoginButton" onclick="popupControl()"><div class="slider"></div>Login</div>
             </div>
         </div>
     </div>

@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use("/public",express.static("./public"));
 
+app.listen(process.env.PORT || 80);
+
 app.get("/",(req,res)=>{
     fs.readFile("html/index.html",(err,data)=>{
         res.write(data);
         res.end();
     });
 });
-
-app.listen(process.env.PORT || 80);
