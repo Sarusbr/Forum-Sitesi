@@ -52,3 +52,27 @@ function popupControl(){
     loginbox.classList.toggle("loginBoxOn");
     popupbox.classList.toggle("open");
 }
+
+function userEnterButton(){
+    var logininformation = {
+        "username":document.getElementById("username").value,
+        "password":document.getElementById("password").value
+    }
+
+    fetch("/login",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(logininformation)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.information == "başarılı"){
+            alert("başarılı");
+        }
+        else{
+            alert("başarısız");
+        }
+    });
+}
