@@ -32,7 +32,7 @@
     <div id="sunAndMoon" class="sun" onclick="sunAndMoon()"></div>
     <div class="bannerBox">
         <div class="bannerContent">
-            <div class="bannerLogoBox"><img src="/public/images/Logo.jpg" class="bannerLogo" alt=""></div>
+            <div class="bannerLogoBox" onclick="mainpage()"><img src="/public/images/Logo.jpg" class="bannerLogo" alt=""></div>
             <div class="bannerLogoText">
                 <span class="Texts">T</span><span class="Texts">ü</span><span class="Texts">r</span><span class="Texts">k</span> <span class="Texts">N</span><span class="Texts">F</span><span class="Texts">T</span> <span class="Texts">P</span><span class="Texts">l</span><span class="Texts">a</span><span class="Texts">f</span><span class="Texts">o</span><span class="Texts">r</span><span class="Texts">m</span><span class="Texts">u</span>
             </div>
@@ -75,12 +75,24 @@
         <div class="innerContentBox">
             <div class="createNewstitle"><h1>Haber Yayınla</h1></div>
             <div class="newsBox">
-                <form action="createNewsForm">
-                    <input type="text" name="newsTitleTextbox" class="newsTitleTextbox">
-                    <textarea name="newsTrailerContent"  class="newsTrailerContent" cols="30" rows="10">asd</textarea>
-                    <textarea name="newsContentTextbox"  class="newsContentTextbox" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Yayınla">
-                </form>
+                <div class="textEditorButtons">
+                    <button class="editorButton" id="boldButton"><b>K</b></button>
+                    <button class="editorButton" id="itelicButton"><i>T</i></button>
+                    <button class="editorButton" id="underlineButton"><u>A</u></button>
+                    <input class="editorButton" type="color" id="editorColor">
+                    <button class="editorButton" id="colorButton">Renk</button>
+                    <select class="editorButton" name="cars" id="editorFontSize">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                    
+                    <button class="editorButton" id="sizeButton">Boyut</button>
+                </div>
+                <div class="textbox" contenteditable="true" spellcheck="false"></div>
             </div>
         </div>
     </div>

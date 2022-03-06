@@ -3,7 +3,7 @@ function rain(){
     let body = document.querySelector(".cloud");
     let i = 0;
     while(i<amount){
-        let drop =document.createElement("i");
+        let drop =document.createElement("em");
         let size=Math.random() * 5;
         let posx= Math.floor(Math.random() * window.innerWidth);
         let delay=Math.random() * -20;
@@ -121,3 +121,30 @@ function userSingInButton(){
         alert("Şifreler aynı olmalıdır");
     }
 }
+
+function mainpage(){
+    window.location.href="/";
+}
+
+var boldbutton = document.getElementById("boldButton");
+var underlinebutton = document.getElementById("underlineButton");
+var italicbutton = document.getElementById("itelicButton");
+var colorbutton = document.getElementById("colorButton");
+var sizebutton = document.getElementById("sizeButton");
+
+boldbutton.addEventListener("click",()=>{
+    document.execCommand("bold",false,null);
+})
+underlinebutton.addEventListener("click",()=>{
+    document.execCommand("underline",false,null);
+})
+italicbutton.addEventListener("click",()=>{
+    document.execCommand("italic",false,null);
+})
+colorbutton.addEventListener("click",()=>{
+    document.execCommand("forecolor",false,document.getElementById("editorColor").value);
+})
+sizebutton.addEventListener("click",()=>{
+    document.execCommand("fontsize",false,document.getElementById("editorFontSize").value);
+})
+
