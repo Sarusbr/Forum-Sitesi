@@ -1,0 +1,12 @@
+.createNewstitle{
+    width: 100%;
+    height: 40px;
+    padding-top: 20px;
+}
+.newsBox{
+    width: 500px;
+    height: auto;
+    margin: auto;
+    background-color: black;
+    margin-top: 20px;
+}

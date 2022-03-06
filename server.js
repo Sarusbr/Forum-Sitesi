@@ -18,6 +18,13 @@ app.get("/",(req,res)=>{
     })
 })
 
+app.get("/news-create-page",(req,res)=>{
+    fs.readFile("html/createNews.html",(err,data)=>{
+        res.write(data);
+        res.end();
+    })
+})
+
 app.post("/login",(req,res)=>{
     MongoClient.connect(URL,(err,client)=>{
         if(err) throw err;
