@@ -10,7 +10,7 @@
 </head>
 <body class="bodysun">
     <div id="LoginPopupBox" class="loginBoxOff">
-        <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek</div>
+        <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve aynı zamanda kullanıcı uyarıları burada olacak</div>
         <div class="loginPopupBox2">
             <input type="text" id="username" placeholder="Kullanıcı Adı" class="usernameBox">
             <input type="password" id="password" placeholder="Şifre" class="usernameBox">
@@ -18,6 +18,16 @@
         </div>
     </div>
     <div id="PopupBackBox" onclick="popupControl()" class="popupBackColor open"></div>
+    <div id="PopupBackBox2" onclick="popupControl2()" class="popupBackColor open"></div>
+    <div id="LoginPopupBox2" class="loginBoxOff">
+        <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve aynı zamanda kullanıcı uyarıları burada olacak</div>
+        <div class="loginPopupBox2">
+            <input type="text" id="username2" placeholder="Kullanıcı Adı" class="usernameBox">
+            <input type="password" id="password2" placeholder="Şifre" class="usernameBox">
+            <input type="password" id="password3" placeholder="Şifre" class="usernameBox">
+            <div class="LoginButton" onclick="userSingInButton()">Kayıt Ol</div>
+        </div>
+    </div>
     <div id="sunAndMoon" class="sun" onclick="sunAndMoon()"></div>
     <div class="bannerBox">
         <div class="bannerContent">
@@ -26,8 +36,8 @@
                 <span class="Texts">T</span><span class="Texts">ü</span><span class="Texts">r</span><span class="Texts">k</span> <span class="Texts">N</span><span class="Texts">F</span><span class="Texts">T</span> <span class="Texts">P</span><span class="Texts">l</span><span class="Texts">a</span><span class="Texts">f</span><span class="Texts">o</span><span class="Texts">r</span><span class="Texts">m</span><span class="Texts">u</span>
             </div>
             <div class="bannerLoginBox">
-                <div class="bannerLoginButton"><div class="slider"></div>Register</div>
-                <div class="bannerLoginButton" onclick="popupControl()"><div class="slider"></div>Login</div>
+                <div class="bannerLoginButton" onclick="popupControl2()"><div class="slider"></div>Kayıt Ol</div>
+                <div class="bannerLoginButton" onclick="popupControl()"><div class="slider"></div>Giriş</div>
             </div>
         </div>
     </div>

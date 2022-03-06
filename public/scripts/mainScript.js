@@ -51,6 +51,10 @@ function popupControl(){
     loginbox.classList.toggle("loginBoxOff");
     loginbox.classList.toggle("loginBoxOn");
     popupbox.classList.toggle("open");
+    if(popupbox.classList.contains("open")){
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+    }
 }
 
 function userEnterButton(){
@@ -69,10 +73,51 @@ function userEnterButton(){
     .then(response => response.json())
     .then(data => {
         if(data.information == "başarılı"){
-            alert("başarılı");
+            alert("Giriş Yapıldı!");
         }
         else{
-            alert("başarısız");
+            alert("Giriş Başarısız! Bu kullanıcı adı mevcut değil!");
         }
     });
+}
+
+function popupControl2(){
+    var loginbox = document.getElementById("LoginPopupBox2");
+    var popupbox = document.getElementById("PopupBackBox2");
+    loginbox.classList.toggle("loginBoxOff");
+    loginbox.classList.toggle("loginBoxOn");
+    popupbox.classList.toggle("open");
+    if(popupbox.classList.contains("open")){
+        document.getElementById("username2").value = "";
+        document.getElementById("password2").value = "";
+        document.getElementById("password3").value = "";
+    }
+}
+
+function userSingInButton(){
+    var informationss = {
+        "username": document.getElementById("username2").value,
+        "password": document.getElementById("password2").value
+    }
+    if(informationss.password === document.getElementById("password3").value){
+        fetch("/singup",{ 
+            method:"POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(informationss)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.information == "başarılı"){
+                alert("Tebrikler kayıt oldun!");
+            }
+            else{
+                alert("Bu kullanıcı adı mevcut!");
+            }
+        });
+    }
+    else{
+        alert("Şifreler aynı olmalıdır");
+    }
 }

@@ -26,25 +26,39 @@ app.post("/login",(req,res)=>{
             if(data != null){
                 res.send({"information":"başarılı"});
                 res.end();
+                client.close();
             }
             else{
                 res.send({"information":"başarısız"});
                 res.end();
+                client.close();
             }
         })
     })
 })
 
-app.get("/kullaniciadi",(req,res)=>{
-    MongoClient.connect(URL, (err, client) => {
-    if (err) throw err;
-    const db = client.db('forumdatabase');
-    db.collection('users').insertOne({ username:"batu" /*req.body.username*/, password: "123"/*req.body.password*/ }, (err, result) => {
-        if (err) throw err;
-            console.log('Başarılı bir şekilde eklendi.');
-            res.status(204).send();
-            res.end();
-            client.close();
-        })
+app.post("/singup",(req,res)=>{
+    console.log("erişildi");
+    MongoClient.connect(URL,(err,client)=>{
+        if(err) throw err;
+        const db = client.db("forumdatabase");
+        db.collection("users").findOne({username:req.body.username},(err3,data)=>{
+            if(data == null){
+                db.collection("users").insertOne({username:req.body.username,password:req.body.password},(error,islem)=>{
+                    if(error) throw error;
+                    res.send({"information":"başarılı"});
+                    res.end();
+                    client.close();
+                    console.log("kayıt başarılı")
+                })
+            }
+            else{
+                res.send({"information":"bu kullanıcı var"});
+                res.end();
+                client.close();
+                console.log("kayıt başarısız!")
+            }
+        });
     })
 })
+
