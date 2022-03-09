@@ -46,3 +46,24 @@
     color: black;
     background-color: white;
 }
+
+.showimgbox{
+    width: 0px;
+    height: 0px;
+    background-color: darkslategray;
+    transition: 0.3s;
+}
+
+.showimgbox:hover{
+    width: 100px;
+    height: 100px;
+    background-color: darkslategray;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.editorButton2{
+    width: 100px;
+    text-align: center;
+    background-color: red;
+}

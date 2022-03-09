@@ -131,6 +131,14 @@ var underlinebutton = document.getElementById("underlineButton");
 var italicbutton = document.getElementById("itelicButton");
 var colorbutton = document.getElementById("colorButton");
 var sizebutton = document.getElementById("sizeButton");
+var list1button = document.getElementById("list1Button");
+var list2button = document.getElementById("list2Button");
+
+var leftButton = document.getElementById("leftButton");
+var rightButton = document.getElementById("rightButton");
+var centerButton = document.getElementById("centerButton");
+var linkbutton = document.getElementById("linkbutton");
+var unlinkButton = document.getElementById("unlinkButton");
 
 boldbutton.addEventListener("click",()=>{
     document.execCommand("bold",false,null);
@@ -147,4 +155,48 @@ colorbutton.addEventListener("click",()=>{
 sizebutton.addEventListener("click",()=>{
     document.execCommand("fontsize",false,document.getElementById("editorFontSize").value);
 })
+list1button.addEventListener("click",()=>{
+    document.execCommand("InsertOrderedList",false,"newOl");
+})
+list2button.addEventListener("click",()=>{
+    document.execCommand("InsertUnorderedList",false,"newUl");
+})
 
+leftButton.addEventListener("click",()=>{
+    document.execCommand("justifyLeft",false,null);
+})
+rightButton.addEventListener("click",()=>{
+    document.execCommand("justifyRight",false,null);
+})
+centerButton.addEventListener("click",()=>{
+    document.execCommand("justifyCenter",false,null);
+})
+
+linkbutton.addEventListener("click",()=>{
+    document.execCommand("link",false,null);
+})
+unlinkButton.addEventListener("click",()=>{
+    document.execCommand("unlink",false,null);
+})
+
+
+function renk(){
+    document.execCommand("forecolor",false,document.getElementById("editorColor").value);
+} 
+
+function boyut(){
+    document.execCommand("fontsize",false,document.getElementById("editorFontSize").value);
+}
+
+function imgbox(){
+    var box = document.getElementById("textEditorImgBox");
+    var button = document.getElementById("textimgboxButton");
+    if(button.style.width == "100px")button.style.width="40px";
+    else button.style.width="100px";
+    box.classList.toggle("showimgbox");
+    box.classList.toggle("showimgbox2");
+}
+
+function baska(){
+    alert("deneme");
+}

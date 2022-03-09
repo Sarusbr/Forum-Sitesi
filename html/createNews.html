@@ -79,9 +79,9 @@
                     <button class="editorButton" id="boldButton"><b>K</b></button>
                     <button class="editorButton" id="itelicButton"><i>T</i></button>
                     <button class="editorButton" id="underlineButton"><u>A</u></button>
-                    <input class="editorButton" type="color" id="editorColor">
-                    <button class="editorButton" id="colorButton">Renk</button>
-                    <select class="editorButton" name="cars" id="editorFontSize">
+                    <input class="editorButton" value={this.state.color} oninput="renk()" type="color" id="editorColor">
+                    <!--<button class="editorButton" id="colorButton">Renk</button>-->
+                    <select class="editorButton" onchange="boyut()" onclick="boyut()" name="colors" id="editorFontSize">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -89,8 +89,18 @@
                         <option value="5">5</option>
                         <option value="6">6</option>
                       </select>
-                    
                     <button class="editorButton" id="sizeButton">Boyut</button>
+                    <button class="editorButton" id="list1Button">Liste 1</button>
+                    <button class="editorButton" id="list2Button">Liste 2</button>
+                    <button class="editorButton" id="leftButton">Sağa Yasla</button>
+                    <button class="editorButton" id="rightButton">Sola Yasla</button>
+                    <button class="editorButton" id="centerButton">Ortala</button>
+                    <button class="editorButton" id="linkbutton">Link</button>
+                    <button class="editorButton" id="unlinkButton">Linki kaldır</button>
+                    <label for="editorFile" class="editorButton2 editorButton" id="textimgboxButton">
+                        resim seç
+                    </label>
+                    <input type="file" style="display: none;" id="editorFile">
                 </div>
                 <div class="textbox" contenteditable="true" spellcheck="false"></div>
             </div>

@@ -371,3 +371,13 @@ em{
     color: white;
     background-color: darkslategrey;
 }
+
+
+ul{
+    list-style: inside disc;
+
+}
+
+ol{
+    list-style: inside decimal;
+}
