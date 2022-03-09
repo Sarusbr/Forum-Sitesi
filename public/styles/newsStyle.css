@@ -9,6 +9,8 @@
     margin: auto;
     background-color: aqua;
     margin-top: 20px;
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .textbox{
@@ -66,4 +68,19 @@
     width: 100px;
     text-align: center;
     background-color: red;
+}
+
+.editorSumbitButton{
+    float: left;
+    position: absolute;
+    right: 5px;
+    margin-top: 5px;
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid silver;
+    background-color: darkslategray;
+    border-radius: 4px;
 }
