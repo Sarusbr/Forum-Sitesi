@@ -69,3 +69,7 @@ app.post("/singup", (req, res) => {
     })
 })
 
+app.post("/publish-news",(req,res)=>{
+    
+})
+
