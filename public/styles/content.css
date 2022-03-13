@@ -63,6 +63,7 @@
     z-index: 1;
     display: flex;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .theNewsBox:hover{

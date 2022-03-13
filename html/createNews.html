@@ -1,119 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turk NFT Platformu</title>
-    <link rel="stylesheet" href="public/styles/mainStyle.css">
-    <link rel="stylesheet" href="/public/styles/content.css">
-    <link rel="stylesheet" href="/public/styles/newsStyle.css">
-</head>
-<body class="bodysun">
-    <div id="LoginPopupBox" class="loginBoxOff">
-        <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve aynı zamanda kullanıcı uyarıları burada olacak</div>
-        <div class="loginPopupBox2">
-            <input type="text" id="username" placeholder="Kullanıcı Adı" class="usernameBox">
-            <input type="password" id="password" placeholder="Şifre" class="usernameBox">
-            <div class="LoginButton" onclick="userEnterButton()">Giriş Yap</div>
-        </div>
-    </div>
-    <div id="PopupBackBox" onclick="popupControl()" class="popupBackColor open"></div>
-    <div id="PopupBackBox2" onclick="popupControl2()" class="popupBackColor open"></div>
-    <div id="LoginPopupBox2" class="loginBoxOff">
-        <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve aynı zamanda kullanıcı uyarıları burada olacak</div>
-        <div class="loginPopupBox2">
-            <input type="text" id="username2" placeholder="Kullanıcı Adı" class="usernameBox">
-            <input type="password" id="password2" placeholder="Şifre" class="usernameBox">
-            <input type="password" id="password3" placeholder="Şifre" class="usernameBox">
-            <div class="LoginButton" onclick="userSingInButton()">Kayıt Ol</div>
-        </div>
-    </div>
-    <div id="sunAndMoon" class="sun" onclick="sunAndMoon()"></div>
-    <div class="bannerBox">
-        <div class="bannerContent">
-            <div class="bannerLogoBox" onclick="mainpage()"><img src="/public/images/Logo.jpg" class="bannerLogo" alt=""></div>
-            <div class="bannerLogoText">
-                <span class="Texts">T</span><span class="Texts">ü</span><span class="Texts">r</span><span class="Texts">k</span> <span class="Texts">N</span><span class="Texts">F</span><span class="Texts">T</span> <span class="Texts">P</span><span class="Texts">l</span><span class="Texts">a</span><span class="Texts">f</span><span class="Texts">o</span><span class="Texts">r</span><span class="Texts">m</span><span class="Texts">u</span>
-            </div>
-            <div class="bannerLoginBox">
-                <div class="bannerLoginButton" onclick="popupControl2()"><div class="slider"></div>Kayıt Ol</div>
-                <div class="bannerLoginButton" onclick="popupControl()"><div class="slider"></div>Giriş</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Turk NFT Platformu</title>
+        <link rel="stylesheet" href="public/styles/mainStyle.css">
+        <link rel="stylesheet" href="/public/styles/content.css">
+        <link rel="stylesheet" href="/public/styles/newsStyle.css">
+    </head>
+    <body class="bodysun">
+        <div id="LoginPopupBox" class="loginBoxOff">
+            <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve
+                aynı zamanda kullanıcı uyarıları burada olacak</div>
+            <div class="loginPopupBox2">
+                <input type="text" id="username" placeholder="Kullanıcı Adı"
+                    class="usernameBox">
+                <input type="password" id="password" placeholder="Şifre"
+                    class="usernameBox">
+                <div class="LoginButton" onclick="userEnterButton()">Giriş Yap</div>
             </div>
         </div>
-    </div>
-    <div class="cloud" id="cloudID" onclick="controlRain()"></div>
-    
-    <ul class="menu"><li>NFT Nedir?</li><li>Haberler</li><li>Forum</li><li>Kurallar</li><li>Hakımızda</li></ul>
-        
-
-    <div class="ContentBox">
-       <div class="stickyBox">
-            <div class="stickybox1">
-            <h1>Haberler</h1>
-            <hr>
-            <span class="stickyNewsText">
-                burada haberler var haberlerrrr
-                burada haberler var haberlerrrr
-                burada haberler var haberlerrrr
-                burada haberler var haberlerrrr
-                burada haberler var haberlerrrr
-            </span>
-            </div>
-            <div class="stickybox1">
-            <h1>Son Sorular</h1>
-            <hr>
-            <span class="stickyNewsText">
-                burada Sorular var haberlerrrr
-                burada Sorular var haberlerrrr
-                burada Sorular var haberlerrrr
-                burada Sorular var haberlerrrr
-                burada Sorular var haberlerrrr
-            </span>
+        <div id="PopupBackBox" onclick="popupControl()" class="popupBackColor
+            open"></div>
+        <div id="PopupBackBox2" onclick="popupControl2()" class="popupBackColor
+            open"></div>
+        <div id="LoginPopupBox2" class="loginBoxOff">
+            <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve
+                aynı zamanda kullanıcı uyarıları burada olacak</div>
+            <div class="loginPopupBox2">
+                <input type="text" id="username2" placeholder="Kullanıcı Adı"
+                    class="usernameBox">
+                <input type="password" id="password2" placeholder="Şifre"
+                    class="usernameBox">
+                <input type="password" id="password3" placeholder="Şifre"
+                    class="usernameBox">
+                <div class="LoginButton" onclick="userSingInButton()">Kayıt Ol</div>
             </div>
         </div>
-        <div class="innerContentBox">
-            <div class="createNewstitle"><h1>Haber Yayınla</h1></div>
-            <div class="newsBox">
-                <div class="textEditorButtons">
-                    <button class="editorButton" id="boldButton"><b>K</b></button>
-                    <button class="editorButton" id="itelicButton"><i>T</i></button>
-                    <button class="editorButton" id="underlineButton"><u>A</u></button>
-                    <input class="editorButton" value={this.state.color} oninput="renk()" type="color" id="editorColor">
-                    <!--<button class="editorButton" id="colorButton">Renk</button>-->
-                    <select class="editorButton" onchange="boyut()" onclick="boyut()" name="colors" id="editorFontSize">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                      </select>
-                    <button class="editorButton" id="sizeButton">Boyut</button>
-                    <button class="editorButton" id="list1Button">Liste 1</button>
-                    <button class="editorButton" id="list2Button">Liste 2</button>
-                    <button class="editorButton" id="leftButton">Sağa Yasla</button>
-                    <button class="editorButton" id="rightButton">Sola Yasla</button>
-                    <button class="editorButton" id="centerButton">Ortala</button>
-                    <button class="editorButton" id="linkbutton">Link</button>
-                    <button class="editorButton" id="unlinkButton">Linki kaldır</button>
-                    <label for="editorFile" class="editorButton2 editorButton" id="textimgboxButton">
-                        resim seç
-                    </label>
-                    <input type="file" style="display: none;" id="editorFile">
+        <div id="sunAndMoon" class="sun" onclick="sunAndMoon()"></div>
+        <div class="bannerBox">
+            <div class="bannerContent">
+                <div class="bannerLogoBox" onclick="mainpage()"><img
+                        src="/public/images/Logo.jpg" class="bannerLogo" alt=""></div>
+                <div class="bannerLogoText">
+                    <span class="Texts">T</span><span class="Texts">ü</span><span
+                        class="Texts">r</span><span class="Texts">k</span> <span
+                        class="Texts">N</span><span class="Texts">F</span><span
+                        class="Texts">T</span> <span class="Texts">P</span><span
+                        class="Texts">l</span><span class="Texts">a</span><span
+                        class="Texts">f</span><span class="Texts">o</span><span
+                        class="Texts">r</span><span class="Texts">m</span><span
+                        class="Texts">u</span>
                 </div>
-                <h2 class="stikyTitledesing">Başlık</h2>
-                <div class="textbox" contenteditable="true" spellcheck="false"></div>
-                <h2 class="stikyTitledesing">Özet</h2>
-                <div class="textbox" contenteditable="true" spellcheck="false"></div>
-                <h2 class="stikyTitledesing">Haber</h2>
-                <div class="textbox" contenteditable="true" spellcheck="false"></div>
-                
-                <input type="text" style="left: 0px;cursor: text;width: 300px;font-size: 20px; padding: 5px;" placeholder="Yazar" class="editorSumbitButton">
-                <div class="editorSumbitButton">Yayınla</div>
+                <div class="bannerLoginBox">
+                    <div class="bannerLoginButton" onclick="popupControl2()"><div
+                            class="slider"></div>Kayıt Ol</div>
+                    <div class="bannerLoginButton" onclick="popupControl()"><div
+                            class="slider"></div>Giriş</div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="public/scripts/mainScript.js"></script>
-</body>
+        <div class="cloud" id="cloudID" onclick="controlRain()"></div>
+
+        <ul class="menu"><li>NFT Nedir?</li><a href="/"><li>Haberler</li></a><li>Forum</li><li>Kurallar</li><li>Hakımızda</li></ul>
+        <div class="ContentBox">
+            <div class="stickyBox">
+                <div class="stickybox1">
+                    <h1>Haberler</h1>
+                    <hr>
+                    <span class="stickyNewsText">
+                        burada haberler var haberlerrrr
+                        burada haberler var haberlerrrr
+                        burada haberler var haberlerrrr
+                        burada haberler var haberlerrrr
+                        burada haberler var haberlerrrr
+                    </span>
+                </div>
+                <div class="stickybox1">
+                    <h1>Son Sorular</h1>
+                    <hr>
+                    <span class="stickyNewsText">
+                        burada Sorular var haberlerrrr
+                        burada Sorular var haberlerrrr
+                        burada Sorular var haberlerrrr
+                        burada Sorular var haberlerrrr
+                        burada Sorular var haberlerrrr
+                    </span>
+                </div>
+            </div>
+            <div class="innerContentBox">
+                <div class="createNewstitle"><h1>Haber Yayınla</h1></div>
+                <div class="newsBox">
+                    <div class="textEditorButtons">
+                        <button class="editorButton" id="boldButton"><b>K</b></button>
+                        <button class="editorButton" id="itelicButton"><i>T</i></button>
+                        <button class="editorButton" id="underlineButton"><u>A</u></button>
+                        <input class="editorButton" value={this.state.color}
+                            oninput="renk()" type="color" id="editorColor">
+                        <!--<button class="editorButton" id="colorButton">Renk</button>-->
+                        <select class="editorButton" onchange="boyut()"
+                            onclick="boyut()" name="colors" id="editorFontSize">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <button class="editorButton" id="sizeButton">Boyut</button>
+                        <button class="editorButton" id="list1Button">Liste 1</button>
+                        <button class="editorButton" id="list2Button">Liste 2</button>
+                        <button class="editorButton" id="leftButton">Sağa Yasla</button>
+                        <button class="editorButton" id="rightButton">Sola Yasla</button>
+                        <button class="editorButton" id="centerButton">Ortala</button>
+                        <button class="editorButton" id="linkbutton">Link</button>
+                        <button class="editorButton" id="unlinkButton">Linki
+                            kaldır</button>
+                        <label for="editorFile" class="editorButton2
+                            editorButton" id="textimgboxButton">
+                            resim seç
+                        </label>
+                        <input type="file" style="display: none;"
+                            id="editorFile">
+                    </div>
+                    <h2 class="stikyTitledesing">Başlık</h2>
+                    <div class="textbox" id="editorTitleTextbox"
+                        contenteditable="true" spellcheck="false"></div>
+                    <h2 class="stikyTitledesing">Özet</h2>
+                    <div class="textbox" id="editorSummaryTextbox"
+                        contenteditable="true" spellcheck="false"></div>
+                    <h2 class="stikyTitledesing">Haber</h2>
+                    <div class="textbox" id="editorContentTextbox"
+                        contenteditable="true" spellcheck="false"></div>
+                    <input type="text" id="editorWriterTextbox" style="left:
+                        0px;cursor: text;width: 300px;font-size: 20px; padding:
+                        5px;" placeholder="Yazar" class="editorSumbitButton">
+                    <div id="submitbuttoneditor" class="editorSumbitButton" onclick="newsSubmitStart()">Yayınla</div>
+                </div>
+            </div>
+        </div>
+        <script src="public/scripts/mainScript.js"></script>
+        <script>
+        function newsSubmitStart(){
+            document.getElementById("submitbuttoneditor").style.display="none";
+            newsSubmit();
+        }
+        function newsSubmit(){
+            /*if(status){*/
+                var newsContent = {
+                    "title": document.getElementById("editorTitleTextbox").innerHTML,
+                    "summary": document.getElementById("editorSummaryTextbox").innerHTML,
+                    "content": document.getElementById("editorContentTextbox").innerHTML,
+                    "writer": document.getElementById("editorWriterTextbox").value
+                }
+                fetch("/publish-news",{ 
+                    method:"POST",
+                    headers: {
+                    "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify(newsContent)
+                })
+                .then(responseve => responseve.json())
+                .then(data => {
+                    status=true;
+                    alert(data.text)
+                    window.location.href="/";
+                })
+            }
+        /*}*/
+    </script>
+    </body>
 </html>
