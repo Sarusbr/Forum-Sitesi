@@ -64,6 +64,7 @@
     display: flex;
     cursor: pointer;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .theNewsBox:hover{

@@ -29,7 +29,8 @@ function editorList2(){
     document.execCommand("InsertOrderedList", false, "newUl");
 }
 
-function editorImage(){
+function editorImage(value){
+    if(value == "normalImg"){
     if(document.getElementById("editorFile").value != ""){
         var textbox = document.getElementById("editorTextBox3");
         var filevalue = document.getElementById("editorFile").value;
@@ -64,4 +65,40 @@ function editorImage(){
         }
         document.getElementById("editorFile").value = "";
     }
+    
+}
+else if(value == "mainImg"){
+    if(document.getElementById("editorFile2").value != ""){
+        var filevalue = document.getElementById("editorFile2").value;
+        var filesSelected = document.getElementById("editorFile2").files;
+        var fileSrc;
+        if (filesSelected.length > 0) {
+          var fileToLoad = filesSelected[0];
+          var fileReader = new FileReader();
+          fileReader.onload = function(fileLoadedEvent) {
+            fileSrc = fileLoadedEvent.target.result; // <--- data: base64
+            var fileURL = fileSrc.split(",");
+            var fileExtention = filevalue.split(".");
+            var uploadImageJson={
+                "imgData":fileURL[1],
+                "imgExtention":fileExtention[fileExtention.length-1]
+            }
+            
+            fetch("/uploadImage",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(uploadImageJson)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("newsMainImg").src = "public/images/NewsImages/"+data.text;
+            })
+          }
+          fileReader.readAsDataURL(fileToLoad);
+        }
+        document.getElementById("editorFile2").value = "";
+    }
+}
 }

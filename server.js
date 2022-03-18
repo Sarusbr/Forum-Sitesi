@@ -90,7 +90,8 @@ app.post("/publish-news", (req, res) => {
             title: req.body.title,
             summary: req.body.summary,
             content: req.body.content,
-            writer: req.body.writer
+            writer: req.body.writer,
+            newsImage: req.body.newsImage
         }, (error, data) => {
             if (error) throw error;
             res.send({ "text": "Haber Yayınlandı!" });

@@ -62,7 +62,12 @@
     height: 100%;
     cursor: pointer;
 }
-
+#editorFile2{
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
 #editorFileButton{
     background-image: url("/public/images/EditorImages/picture.png");
     background-repeat: no-repeat;
@@ -116,4 +121,35 @@
 
 .editorTextImgFull{
     max-width: 300px;
+}
+
+#newsMainImg{
+    max-width: 200px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.NewsMainImgContainer{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.NewsMainImgContainer button{
+    width: auto;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(58, 100, 100);
+    transition: 0.3s;
+    color: black;
+    font-size: 19px;
 }

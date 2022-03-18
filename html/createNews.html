@@ -110,7 +110,7 @@
                         <button onclick="editorCenter()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/center.png" class="editorImage" alt=""></button>
                         <button onclick="editorRight()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/right.png" class="editorImage" alt=""></button>
                         <button class="EditorButtonsStyle" id="editorFileButton">
-                            <input onchange="editorImage()" id="editorFile" type="file"></input>
+                            <input onchange="editorImage('normalImg')" id="editorFile" type="file"></input>
                         </button>
                         <button onclick="editorList1()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list1.png" class="editorImage" alt=""></button>
                         <button onclick="editorList2()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list2.png" class="editorImage" alt=""></button>
@@ -124,8 +124,16 @@
                     <div class="editorBackground"><h1>Haber</h1></div>
                     <div id="editorTextBox3" class="editorText" contenteditable="true"></div>
                     <hr>
+                    <div class="NewsMainImgContainer">
+                        <h2>Haber Fotoğrafını Yükle</h2>
+                        <button class="EditorButtonsStyle" id="editorFileButton">
+                            <input onchange="editorImage('mainImg')" id="editorFile2" type="file"></input>
+                        </button>
+                        <img id="newsMainImg" src="" alt="">
+                    </div>
+                    <hr>
                     <input type="text" id="editorTextBox4" placeholder="Yazar..." class="yazarButton">
-                    <div type="submit"onclick="newsSubmitStart()" class="editorSubmitButton">Yayınla</div>
+                    <div type="submit"onclick="newsSubmitStart()" id="submitbuttoneditor" class="editorSubmitButton">Yayınla</div>
                 </div>
             </div>
         </div>
@@ -141,7 +149,8 @@
                     "title": document.getElementById("editorTextBox1").innerHTML,
                     "summary": document.getElementById("editorTextBox2").innerHTML,
                     "content": document.getElementById("editorTextBox3").innerHTML,
-                    "writer": document.getElementById("editorTextBox4").value
+                    "writer": document.getElementById("editorTextBox4").value,
+                    "newsImage": document.getElementById("newsMainImg").src
                 }
                 fetch("/publish-news",{ 
                     method:"POST",
@@ -154,7 +163,12 @@
                 .then(data => {
                     status=true;
                     alert(data.text)
-                    window.location.href="/";
+                    document.getElementById("editorTextBox1").innerHTML = "";
+                    document.getElementById("editorTextBox2").innerHTML="";
+                    document.getElementById("editorTextBox3").innerHTML="";
+                    document.getElementById("editorTextBox4").value="";
+                    document.getElementById("newsMainImg").src="";
+                    document.getElementById("submitbuttoneditor").style.display="Flex";
                 })
             }
     </script>
