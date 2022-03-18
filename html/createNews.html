@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="public/styles/mainStyle.css">
         <link rel="stylesheet" href="/public/styles/content.css">
         <link rel="stylesheet" href="/public/styles/newsStyle.css">
+        <link rel="stylesheet" href="/public/styles/editorStyle.css">
     </head>
     <body class="bodysun">
         <div id="LoginPopupBox" class="loginBoxOff">
@@ -91,16 +92,13 @@
             </div>
             <div class="innerContentBox">
                 <div class="createNewstitle"><h1>Haber Yayınla</h1></div>
-                <div class="newsBox">
-                    <div class="textEditorButtons">
-                        <button class="editorButton" id="boldButton"><b>K</b></button>
-                        <button class="editorButton" id="itelicButton"><i>T</i></button>
-                        <button class="editorButton" id="underlineButton"><u>A</u></button>
-                        <input class="editorButton" value={this.state.color}
-                            oninput="renk()" type="color" id="editorColor">
-                        <!--<button class="editorButton" id="colorButton">Renk</button>-->
-                        <select class="editorButton" onchange="boyut()"
-                            onclick="boyut()" name="colors" id="editorFontSize">
+                <div class="editor">
+                    <div class="editorButtons">
+                        <button onclick="editorBold()" class="EditorButtonsStyle"><b>K</b></button>
+                        <button onclick="editorItalic()" class="EditorButtonsStyle"><i>T</i></button>
+                        <button onclick="editorUnderline()" class="EditorButtonsStyle"><u>A</u></button>
+                        <input oninput="editorColor()" id="EditorColorButton" type="color" class="EditorButtonsStyle"></input>
+                        <select onchange="editorSize()" id="editorSizeButton" class="EditorButtonsStyle">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -108,38 +106,30 @@
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
-                        <button class="editorButton" id="sizeButton">Boyut</button>
-                        <button class="editorButton" id="list1Button">Liste 1</button>
-                        <button class="editorButton" id="list2Button">Liste 2</button>
-                        <button class="editorButton" id="leftButton">Sağa Yasla</button>
-                        <button class="editorButton" id="rightButton">Sola Yasla</button>
-                        <button class="editorButton" id="centerButton">Ortala</button>
-                        <button class="editorButton" id="linkbutton">Link</button>
-                        <button class="editorButton" id="unlinkButton">Linki
-                            kaldır</button>
-                        <label for="editorFile" class="editorButton2
-                            editorButton" id="textimgboxButton">
-                            resim seç
-                        </label>
-                        <input type="file" style="display: none;"
-                            id="editorFile">
+                        <button onclick="editorLeft()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/left.png" class="editorImage" alt=""></button>
+                        <button onclick="editorCenter()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/center.png" class="editorImage" alt=""></button>
+                        <button onclick="editorRight()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/right.png" class="editorImage" alt=""></button>
+                        <button class="EditorButtonsStyle" id="editorFileButton">
+                            <input onchange="editorImage()" id="editorFile" type="file"></input>
+                        </button>
+                        <button onclick="editorList1()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list1.png" class="editorImage" alt=""></button>
+                        <button onclick="editorList2()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list2.png" class="editorImage" alt=""></button>
+                        <button onclick="editorLink()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/link.png" class="editorImage" alt=""></button>
+                        <button onclick="editorUnLink()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/unlink.png" class="editorImage" alt=""></button>
                     </div>
-                    <h2 class="stikyTitledesing">Başlık</h2>
-                    <div class="textbox" id="editorTitleTextbox"
-                        contenteditable="true" spellcheck="false"></div>
-                    <h2 class="stikyTitledesing">Özet</h2>
-                    <div class="textbox" id="editorSummaryTextbox"
-                        contenteditable="true" spellcheck="false"></div>
-                    <h2 class="stikyTitledesing">Haber</h2>
-                    <div class="textbox" id="editorContentTextbox"
-                        contenteditable="true" spellcheck="false"></div>
-                    <input type="text" id="editorWriterTextbox" style="left:
-                        0px;cursor: text;width: 300px;font-size: 20px; padding:
-                        5px;" placeholder="Yazar" class="editorSumbitButton">
-                    <div id="submitbuttoneditor" class="editorSumbitButton" onclick="newsSubmitStart()">Yayınla</div>
+                    <div class="editorBackground"><h1>Başlık</h1></div>
+                    <div id="editorTextBox1" class="editorText" contenteditable="true"></div>
+                    <div class="editorBackground"><h1>Özet</h1></div>
+                    <div id="editorTextBox2" class="editorText" contenteditable="true"></div>
+                    <div class="editorBackground"><h1>Haber</h1></div>
+                    <div id="editorTextBox3" class="editorText" contenteditable="true"></div>
+                    <hr>
+                    <input type="text" placeholder="Yazar..." class="yazarButton">
+                    <div type="submit" class="editorSubmitButton">Yayınla</div>
                 </div>
             </div>
         </div>
+        <script src="public/scripts/editorScript.js"></script>
         <script src="public/scripts/mainScript.js"></script>
         <script>
         function newsSubmitStart(){

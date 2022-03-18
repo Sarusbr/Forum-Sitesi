@@ -28,7 +28,7 @@ app.get("/news", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
-    if(req.body.username == "adminuser" && req.body.password == "tom94100"){
+    if(req.body.username == "ad" && req.body.password == "123"){
         res.send({
             'information':'başarılı',
             'html':'<div class="otherLogin"><span>Admin bilgileri İle giriş yaptınız<br>Kullanıcı bilgilerini tekrar girin</span><form action="/adminLogin" method="post"><input class="usernameBox" type="text" name="adminusername"><br><input class="usernameBox" type="password" name="adminpassword"><br><br><input class="LoginButton" type="submit" value="Giriş"></form></div>'
@@ -112,7 +112,7 @@ app.get("/get-news",(req,res)=>{
 })
 
 app.post("/adminLogin",(req,res)=>{
-    if(req.body.adminusername == "adminuser" && req.body.adminpassword == "tom94100"){
+    if(req.body.adminusername == "ad" && req.body.adminpassword == "123"){
         fs.readFile("html/createNews.html", (err, data) => {
             res.write(data);
             res.end();
