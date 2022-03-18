@@ -94,6 +94,7 @@ else if(value == "mainImg"){
             .then(response => response.json())
             .then(data => {
                 document.getElementById("newsMainImg").src = "public/images/NewsImages/"+data.text;
+                mainimagesrc = "public/images/NewsImages/"+data.text;
             })
           }
           fileReader.readAsDataURL(fileToLoad);

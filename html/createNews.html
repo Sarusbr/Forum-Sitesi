@@ -140,9 +140,9 @@
         <script src="public/scripts/editorScript.js"></script>
         <script src="public/scripts/mainScript.js"></script>
         <script>
+            var mainimagesrc="";
         function newsSubmitStart(){
             document.getElementById("submitbuttoneditor").style.display="none";
-            newsSubmit();
         }
         function newsSubmit(){
                 var newsContent = {
@@ -150,7 +150,7 @@
                     "summary": document.getElementById("editorTextBox2").innerHTML,
                     "content": document.getElementById("editorTextBox3").innerHTML,
                     "writer": document.getElementById("editorTextBox4").value,
-                    "newsImage": document.getElementById("newsMainImg").src
+                    "newsImage": mainimagesrc
                 }
                 fetch("/publish-news",{ 
                     method:"POST",
