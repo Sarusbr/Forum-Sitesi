@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
     })
 })
 
-app.get("/news", (req, res) => {
-    fs.readFile("html/createNews.html", (err, data) => {
+app.get("/haber", (req, res) => {
+    fs.readFile("html/newsPage.html", (err, data) => {
         res.write(data);
         res.end();
     })
@@ -107,6 +107,19 @@ app.get("/get-news", (req, res) => {
         if (err) throw err;
         const db = client.db("forumdatabase");
         db.collection("news").find({}).toArray((err2, result) => {
+            if (err2) throw err2;
+            res.send(result);
+            res.end();
+            client.close();
+        })
+    })
+})
+
+app.get("/haber/:test",(req,res)=>{
+    MongoClient.connect(URL, (err, client) => {
+        if (err) throw err;
+        const db = client.db("forumdatabase");
+        db.collection("news").find({title:{'$regex':req.params.test}}).toArray((err2, result) => {
             if (err2) throw err2;
             res.send(result);
             res.end();

@@ -398,3 +398,8 @@ ol{
     align-items: center;
     flex-direction: column;
 }
+
+.newslink{
+    text-decoration: none;
+    color: inherit;
+}
