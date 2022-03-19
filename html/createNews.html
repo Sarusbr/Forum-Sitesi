@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="/public/styles/editorStyle.css">
     </head>
     <body class="bodysun">
+        <!--<div class="editorLinkConteiner">
+            <input type="text" class="editorLinkText"><br>
+            <button class="editorLinkButton">Tamam</button>
+        </div>-->
         <div id="LoginPopupBox" class="loginBoxOff">
             <div class="loginPopupBox1">Bu kısma ilerdide animasyon gelecek ve
                 aynı zamanda kullanıcı uyarıları burada olacak</div>
@@ -93,6 +97,7 @@
             <div class="innerContentBox">
                 <div class="createNewstitle"><h1>Haber Yayınla</h1></div>
                 <div class="editor">
+                    
                     <div class="editorButtons">
                         <button onclick="editorBold()" class="EditorButtonsStyle"><b>K</b></button>
                         <button onclick="editorItalic()" class="EditorButtonsStyle"><i>T</i></button>
@@ -114,7 +119,9 @@
                         </button>
                         <button onclick="editorList1()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list1.png" class="editorImage" alt=""></button>
                         <button onclick="editorList2()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/list2.png" class="editorImage" alt=""></button>
-                        <button onclick="editorLink()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/link.png" class="editorImage" alt=""></button>
+                        <button onclick="editorLink()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/link.png" class="editorImage" alt="">
+                            
+                        </button>
                         <button onclick="editorUnLink()" class="EditorButtonsStyle" style="padding: 3px;"><img src="/public/images/EditorImages/unlink.png" class="editorImage" alt=""></button>
                     </div>
                     <div class="editorBackground"><h1>Başlık</h1></div>
@@ -132,6 +139,17 @@
                         <img id="newsMainImg" src="" alt="">
                     </div>
                     <hr>
+                    <div style="border: 0px solid black;" id="editorRreview" class="NewsMainImgContainer">
+                        <h2>Önizleme</h2>
+                        <div class="theNewsBox">
+                            <div class="newsTitle">
+                                <h1>'+element.title+'</h1>
+                                <div class="bilgiler">'+element.summary+'</div>
+                            </div>
+                            <img class="newsImage" src="'+element.newsImage+'" alt="">
+                        </div>
+                    </div>
+                    <hr>
                     <input type="text" id="editorTextBox4" placeholder="Yazar..." class="yazarButton">
                     <div type="submit"onclick="newsSubmitStart()" id="submitbuttoneditor" class="editorSubmitButton">Yayınla</div>
                 </div>
@@ -140,12 +158,18 @@
         <script src="public/scripts/editorScript.js"></script>
         <script src="public/scripts/mainScript.js"></script>
         <script>
+            setInterval(() => {
+                var nesne ='<h2>Önizleme</h2><div class="theNewsBox"><div class="newsTitle"><h1>'+document.getElementById("editorTextBox1").innerHTML+'</h1><div class="bilgiler">'+document.getElementById("editorTextBox2").innerHTML+'</div></div><img class="newsImage" src="'+mainimagesrc+'" alt=""></div>';
+                if(document.getElementById("editorRreview").innerHTML != nesne){
+                    document.getElementById("editorRreview").innerHTML = nesne ;
+                }
+            }, 500);
             var mainimagesrc="";
-        function newsSubmitStart(){
-            document.getElementById("submitbuttoneditor").style.display="none";
-            newsSubmit()
-        }
-        function newsSubmit(){
+            function newsSubmitStart(){
+                document.getElementById("submitbuttoneditor").style.display="none";
+                newsSubmit()
+            }
+            function newsSubmit(){
                 var newsContent = {
                     "title": document.getElementById("editorTextBox1").innerHTML,
                     "summary": document.getElementById("editorTextBox2").innerHTML,

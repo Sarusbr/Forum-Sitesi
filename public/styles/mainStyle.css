@@ -382,7 +382,7 @@ ol{
     list-style: inside decimal;
 }
 
-a{
+.menu a{
     text-decoration: none;
     color: white;
 }

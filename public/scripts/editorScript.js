@@ -28,7 +28,12 @@ function editorList1(){
 function editorList2(){
     document.execCommand("InsertOrderedList", false, "newUl");
 }
-
+function editorLink(){
+    document.execCommand("CreateLink", false, "https:"+prompt('Linki Giriniz').replace("https:","").replace("http:",""));
+}
+function editorUnLink(){
+    document.execCommand("UnLink", false, null);
+}
 function editorImage(value){
     if(value == "normalImg"){
     if(document.getElementById("editorFile").value != ""){
@@ -103,3 +108,4 @@ else if(value == "mainImg"){
     }
 }
 }
+
