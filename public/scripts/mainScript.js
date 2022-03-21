@@ -1,3 +1,5 @@
+newsGetData();
+
 function rain() {
     let amount = 250;
     let body = document.querySelector(".cloud");
@@ -134,5 +136,28 @@ function imgbox() {
     else button.style.width = "100px";
     box.classList.toggle("showimgbox");
     box.classList.toggle("showimgbox2");
+}
+
+var thispage = false;
+
+function newsGetData(){
+    fetch("/get-news")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(element => {
+            var nesne2 = '<a class="newslink" href="/haber/?baslik='+stringtohtml(element.title).textContent+'"><div class="stickyNews">'+element.title+'</div></a>'
+            document.getElementById("stickyNewsContainer").innerHTML = nesne2+document.getElementById("stickyNewsContainer").innerHTML;
+            if(thispage){
+                var nesne ='<a class="newslink" href="/haber/?baslik='+stringtohtml(element.title).textContent+'"><div class="theNewsBox"><div class="newsTitle"><h1>'+element.title+'</h1><div class="bilgiler">'+element.summary+'</div></div><img class="newsImage" src="'+element.newsImage+'" alt=""></div></a>';
+                document.getElementById("mycontentBox").innerHTML = nesne + document.getElementById("mycontentBox").innerHTML;
+            }
+        });
+    });
+}
+
+function stringtohtml(str){
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str,'text/html');
+    return doc.body;
 }
 
