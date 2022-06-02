@@ -35,7 +35,7 @@ var app = new Vue({
     },
     created(){
       setInterval(() => {
-        this.myscreen = screen.width;
+        this.myscreen = window.innerWidth;
       },300);
     }
   })

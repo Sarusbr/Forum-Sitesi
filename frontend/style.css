@@ -86,6 +86,14 @@
     width: 100px;
 }
 
+.obj-fit-cover{
+    object-fit: cover;
+}
+
+.news-maxsize{
+    height: 300px;
+}
+
 .modSelecter{
     width: 100px;
     height: 100px;
