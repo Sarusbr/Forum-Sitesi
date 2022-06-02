@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var fs = require("fs");
-app.listen(80);
+app.listen(process.env.PORT || 80);
 
 app.use(express.static("../frontend/"))
 
