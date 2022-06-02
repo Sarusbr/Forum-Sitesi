@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Forum Sitesi</title>
+</head>
+<body class="mybg-dark4">
+    <div id="app">
+
+        <nav id="banner" class="navbar navbar-expand-lg navbar-dark mybg-dark3 h-50 border-bottom text-center">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="d-inline-block pr-4" id="splitter-logo">
+                        <img id="logoImg" class="img-fluid crs-pointer rounded-circle" src="images/Logo.jpg" alt="">
+                    </div>
+                    <span class="mr-3 user-select-none text-white desktop-title">
+                        <span class="Texts">T</span><span class="Texts">ü</span><span class="Texts">r</span><span class="Texts">k</span> <span class="Texts">N</span><span class="Texts">F</span><span class="Texts">T</span> <span class="Texts">P</span><span class="Texts">l</span><span class="Texts">a</span><span class="Texts">f</span><span class="Texts">o</span><span class="Texts">r</span><span class="Texts">m</span><span class="Texts">u</span>
+                    </span>
+                </a>
+                <div>
+                    <div class="btn btn-primary shadow mr-2 btn-login" @click="test()">Giriş</div>
+                    <div class="btn btn-danger shadow btn-login">Kayıt ol</div>
+                </div>
+            </div>
+        </nav>
+        
+        <nav id="asdd" class="navbar navbar-expand-md sticky-top navbar-dark mybg-dark3">
+            <div class="container position-relative">
+                <button id="navbarHideButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav user-select-none">
+                        <li class="nav-item crs-pointer" :class="selectedPage==0?'active':''">
+                            <a class="nav-link" @click="selectedPage=0">NFT nedir?</a>
+                        </li>
+                        <li class="nav-item crs-pointer" :class="selectedPage==1?'active':''">
+                            <a class="nav-link" @click="selectedPage=1">Haberler</a>
+                        </li>
+                        <li class="nav-item crs-pointer" :class="selectedPage==2?'active':''">
+                            <a class="nav-link" @click="selectedPage=2">Forum</a>
+                        </li>
+                        <li class="nav-item crs-pointer" :class="selectedPage==3?'active':''">
+                            <a class="nav-link" @click="selectedPage=3" >Hakkımızda</a>
+                        </li>
+                        <li class="nav-item crs-pointer" :class="selectedPage==4?'active':''">
+                            <a class="nav-link" @click="selectedPage=4">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="mr-3 user-select-none text-white phone-title" >
+                    <span class="Texts">T</span><span class="Texts">ü</span><span class="Texts">r</span><span class="Texts">k</span> <span class="Texts">N</span><span class="Texts">F</span><span class="Texts">T</span> <span class="Texts">P</span><span class="Texts">l</span><span class="Texts">a</span><span class="Texts">f</span><span class="Texts">o</span><span class="Texts">r</span><span class="Texts">m</span><span class="Texts">u</span>
+                </span>
+            </div>
+        </nav>
+
+        <div id="contentBox" class="container p-3">
+            <div class="row">
+                <div class="col-lg-8 mb-3">
+                    <div class="card bg-secondary border-bottom">
+
+
+                        <div class="card-header mybg-dark3 text-white border-bottom border-secondary">
+                            Lorem, ipsum.(forum)
+                        </div>
+                        
+                        <ul class="list-group list-group-flush">
+
+
+                            <li class="list-group-item bg-dark">
+                                <div class="card mb-3 bg-dark text-white border-secondary">
+                                    <img class="card-img-top" src="https://www.klasiksanatlar.com/img/sayfalar/b/1_1598452306_resim.png" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                  </div>
+                            </li>
+
+
+                            <li class="list-group-item bg-dark">
+                                <div class="card mb-3 bg-dark border-secondary text-white">
+                                    <img class="card-img-top" src="https://www.dunyaatlasi.com/wp-content/uploads/2018/09/resim-tablo-nasil-okunur-1280x720.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                  </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+
+
+                    <div class="card mb-3 text-white bg-secondary">
+                        <div class="card-header mybg-dark3 border-secondary">
+                            Lorem, ipsum.{{myscreen}}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3 text-white bg-secondary">
+                        <div class="card-header mybg-dark3 border-secondary">
+                            Lorem, ipsum.{{myscreen}}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3 text-white bg-secondary">
+                        <div class="card-header mybg-dark3 border-secondary">
+                            Lorem, ipsum.{{myscreen}}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                            <li class="list-group-item bg-dark">Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#logoImg {
+    width: 70px;
+    transition: 0.2s;
+    border: 2px solid white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#logoImg:hover {
+    width: 70px;
+    box-shadow: 0px 0px 20px red;
+    animation: shadowDance 2s infinite;
+}
+
+@keyframes shadowDance {
+    0% {
+        box-shadow: 0px 0px 20px white;
+    }
+
+    25% {
+        box-shadow: 0px 0px 20px yellow;
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px red;
+    }
+
+    75% {
+        box-shadow: 0px 0px 20px blue;
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px white;
+    }
+}
+
+.crs-pointer {
+    cursor: pointer;
+}
+
+.Texts {
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Texts:hover {
+    text-shadow: 0px 0px 10px red, 0px 0px 10px red, 0px 0px 10px red, 0px 0px 10px red;
+    color: red;
+}
+
+
+@media (min-width: 768px) { /*pc*/
+    .phone-title{
+        opacity: 0%;
+    }
+
+    #splitter-logo{
+        border-right: 1px solid #ccc;
+        margin-right: 10px;
+    }
+
+}
+
+#contentBox{
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {/*telefon*/
+    .desktop-title{
+        display: none;
+    }
+
+    .phone-title{
+        position: absolute;
+        right: 0px;
+        top: 3px;
+    }
+}
+
+.btn-login{
+    width: 100px;
+}
+
+.modSelecter{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.5s;
+    top: 115px;
+}
+
+body{
+    transition: 0.4s;
+}
+
+.modSun{
+    background-color: yellow;
+    left: 20px;
+    box-shadow: 0px 0px 10px red;
+}
+
+.modNight{
+    background-color: white;
+    left: calc(100% - 90px);
+    box-shadow: 0px 0px 10px white;
+}
+/*
+.bg-light-body{
+
+}
+*/
+.bg-dark-body{
+    background-color: #0c192c;
+}
+
+/*Palet*/
+
+.mybg-dark{
+    background-color: rgb(24, 24, 24);
+}
+.mybg-dark2{
+    background-color: rgb(32, 32, 32);
+}
+.mybg-dark3{
+    background-color: #2F3136;
+}
+.mybg-dark4{
+    background-color: #202225;
+}
+
+/*Scrollbar options*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ccc;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
