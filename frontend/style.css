@@ -17,7 +17,7 @@
 
 @keyframes shadowDance {
     0% {
-        box-shadow: 0px 0px 20px white;
+        box-shadow: 0px 0px 20px transparent;
     }
 
     25% {
@@ -70,7 +70,7 @@
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {/*telefon*/
+@media (max-width: 767px) {/*telefon*/
     .desktop-title{
         display: none;
     }
@@ -83,7 +83,16 @@
 }
 
 .btn-login{
-    width: 100px;
+    width: auto;
+    font-size: 1rem;
+}
+
+.flexbox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    width: 210px;
 }
 
 .obj-fit-cover{
@@ -91,7 +100,36 @@
 }
 
 .news-maxsize{
-    height: 300px;
+    height: 200px;
+}
+
+.news-maxsize-mobile{
+    height: 430px;
+}
+
+.h-40{
+    height: 40%;
+}
+
+.h-60{
+    height: 60%;
+}
+
+.align-hori{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.select-react:hover{
+    transform: scale(101%,101%);
+    border-color: white !important;
+}
+
+
+.select-react{
+    transition: 0.2s;
 }
 
 .modSelecter{
