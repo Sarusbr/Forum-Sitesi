@@ -65,7 +65,7 @@
                                 <td><input type="password" class="form-control bg-dark text-white" v-on:keyup.enter="register()" v-model="password2"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-danger float-right" >Kayıt ol</div></td>
+                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-danger float-right" @click="register()">Kayıt ol</div></td>
                             </tr>
                         </table>
                     </div>

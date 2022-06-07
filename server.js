@@ -30,3 +30,24 @@ app.post("/loginControl",(req,res)=>{
         res.end(JSON.stringify({status:control}));
     })
 })
+
+app.post("/register",(req,res)=>{//kullanıcı kayıt
+    console.log("girdim")
+    var control = false;
+    fs.readFile("users.json","utf8",(err,data)=>{
+        data = JSON.parse(data);
+        for (let i = 0; i < data.length; i++) {
+            if(data[i].username == req.body.username){
+                control = true;
+                break;
+            }            
+        }
+        if(!control){
+            data.push(req.body);
+            fs.writeFile("users.json",JSON.stringify(data,null,4),(err)=>{
+                res.end(JSON.stringify({status:true}))
+            })
+        }
+        else res.end(JSON.stringify({status:false}));
+    })
+})
