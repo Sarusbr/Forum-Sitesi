@@ -4,7 +4,10 @@ var app = new Vue({
       selectedPage: 0,
       nowmod:"sun",
       elementPosition:0,
-      myscreen:0
+      myscreen:0,
+      username:"",
+      password:"",
+      password2:""
     },
     methods:{
       changeMod(){
@@ -31,6 +34,29 @@ var app = new Vue({
         outer.parentNode.removeChild(outer);
       
         return scrollbarWidth;
+      },
+      login(){
+
+        let mydata = {
+          username: this.username,
+          password: this.password
+        }
+        
+        fetch('/loginControl', {
+          method: "POST",
+          body: JSON.stringify(mydata),
+          headers: {"Content-type": "application/json"}
+        })
+        .then(response => response.json())
+        .then(json => {
+          if(json.status) alert("giriş başarılı!");
+          else alert("Başarısız!!");
+        })
+
+
+      },
+      register(){
+        alert(this.username+"\n"+this.password+"\n"+this.password2);
       }
     },
     created(){

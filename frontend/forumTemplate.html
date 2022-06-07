@@ -10,7 +10,7 @@
 </head>
 <body class="mybg-dark4">
     <div id="app">
-
+        <!--Giriş Kısmı popup-->
         <div id="SingInModal" class="modal fade"  role="dialog">
             <div class="modal-dialog border border-light rounded" role="document">
                 <div class="modal-content bg-dark text-light">
@@ -24,14 +24,14 @@
                         <table class="w-100 h-100 text-white" cellpadding="7">
                             <tr>
                                 <td>Kullanıcı Adı:</td>
-                                <td><input type="text" class="form-control bg-dark text-white"></td>
+                                <td><input type="text" v-model="username" v-on:keyup.enter="login()" class="form-control bg-dark text-white"></td>
                             </tr>
                             <tr>
                                 <td>Şifre:</td>
-                                <td><input type="password" class="form-control bg-dark text-white"></td>
+                                <td><input type="password" v-model="password" v-on:keyup.enter="login()" class="form-control bg-dark text-white"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-primary float-right">Giriş</div></td>
+                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-primary float-right" @click="login()">Giriş</div></td>
                             </tr>
                         </table>
                     </div>
@@ -39,6 +39,9 @@
             </div>
         </div>
 
+
+
+        <!--Kayıt ol popup-->
         <div id="SingUpModal" class="modal fade"  role="dialog">
             <div class="modal-dialog border border-light rounded" role="document">
                 <div class="modal-content bg-dark text-light">
@@ -52,17 +55,17 @@
                         <table class="w-100 h-100 text-white" cellpadding="7">
                             <tr>
                                 <td>Kullanıcı Adı:</td>
-                                <td><input type="text" class="form-control bg-dark text-white"></td>
+                                <td><input type="text" class="form-control bg-dark text-white" v-on:keyup.enter="register()" v-model="username"></td>
                             </tr>
                             <tr>
                                 <td>Şifre:</td>
-                                <td><input type="password" class="form-control bg-dark text-white"></td>
+                                <td><input type="password" class="form-control bg-dark text-white" v-on:keyup.enter="register()" v-model="password"></td>
                             </tr><tr>
                                 <td>Tekrar şifre:</td>
-                                <td><input type="password" class="form-control bg-dark text-white"></td>
+                                <td><input type="password" class="form-control bg-dark text-white" v-on:keyup.enter="register()" v-model="password2"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-danger float-right">Kayıt ol</div></td>
+                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-danger float-right" >Kayıt ol</div></td>
                             </tr>
                         </table>
                     </div>
