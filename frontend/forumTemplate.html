@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Forum Sitesi</title>
+    <link rel="icon" href="images/tabLogo.png">
+    <title>Türk NFT Platformu</title>
 </head>
 <body class="mybg-dark4">
     <div id="app">
@@ -15,7 +16,7 @@
             <div class="modal-dialog border border-light rounded" role="document">
                 <div class="modal-content bg-dark text-light">
                     <div class="modal-header bg-dark text-light">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Giriş yap</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"  class="text-white">&times;</span>
                         </button>
@@ -31,7 +32,7 @@
                                 <td><input type="password" v-model="password" v-on:keyup.enter="login()" class="form-control bg-dark text-white"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="clearfix"><div class="btn w-25 btn-primary float-right" @click="login()">Giriş</div></td>
+                                <td colspan="2" class="clearfix"><div style="font-size: 12px;" class="w-75 crs-pointer float-left text-danger text-muted">Şifremi unuttum</div><div class="btn w-25 btn-primary float-right" @click="login()">Giriş</div></td>
                             </tr>
                         </table>
                     </div>
@@ -39,14 +40,12 @@
             </div>
         </div>
 
-
-
         <!--Kayıt ol popup-->
         <div id="SingUpModal" class="modal fade"  role="dialog">
             <div class="modal-dialog border border-light rounded" role="document">
                 <div class="modal-content bg-dark text-light">
                     <div class="modal-header bg-dark text-light">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Kayıt ol</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" class="text-white">&times;</span>
                         </button>
@@ -90,7 +89,7 @@
             </div>
         </nav>
         
-        <nav id="asdd" class="navbar navbar-expand-md sticky-top w-100 navbar-dark mybg-dark3">
+        <nav class="navbar navbar-expand-md sticky-top navbar-dark mybg-dark3">
             <div class="container position-relative">
                 <button id="navbarHideButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>

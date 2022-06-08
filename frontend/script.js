@@ -57,23 +57,26 @@ var app = new Vue({
 
       },
       register(){
-        let mydata = {
-          username: this.username,
-          password: this.password
+        if(this.password == this.password2){
+          let mydata = {
+            username: this.username,
+            password: this.password
+          }
+          this.username="";
+          this.password="";
+          this.password2="";
+          fetch('/register', {
+            method: "POST",
+            body: JSON.stringify(mydata),
+            headers: {"Content-type": "application/json"}
+          })
+          .then(response => response.json())
+          .then(json => {
+            if(json.status) alert("kayıt başarılı!");
+            else alert("Bu kullancı adı zaten mevcut!");
+          })
         }
-        this.username="";
-        this.password="";
-        this.password2="";
-        fetch('/register', {
-          method: "POST",
-          body: JSON.stringify(mydata),
-          headers: {"Content-type": "application/json"}
-        })
-        .then(response => response.json())
-        .then(json => {
-          if(json.status) alert("kayıt başarılı!");
-          else alert("Bu kullancı adı zaten mevcut!");
-        })
+        else alert("şifreler aynı değil!");
       }
     },
     created(){

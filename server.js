@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
     })
 })
 
-app.post("/loginControl",(req,res)=>{
+app.post("/loginControl",(req,res)=>{//giriş api
     var control = false;
     fs.readFile("users.json","utf8",(err,data)=>{
         data = JSON.parse(data);
@@ -31,8 +31,7 @@ app.post("/loginControl",(req,res)=>{
     })
 })
 
-app.post("/register",(req,res)=>{//kullanıcı kayıt
-    console.log("girdim")
+app.post("/register",(req,res)=>{//kullanıcı kayıt api
     var control = false;
     fs.readFile("users.json","utf8",(err,data)=>{
         data = JSON.parse(data);
@@ -45,6 +44,7 @@ app.post("/register",(req,res)=>{//kullanıcı kayıt
         if(!control){
             data.push(req.body);
             fs.writeFile("users.json",JSON.stringify(data,null,4),(err)=>{
+                console.log("yeni kullanıcı kaydedildi.");
                 res.end(JSON.stringify({status:true}))
             })
         }
