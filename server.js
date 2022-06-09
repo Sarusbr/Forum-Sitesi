@@ -27,7 +27,7 @@ app.get("/adminPage",(req,res)=>{
         })
     }
     else{
-        res.end("böyle bir sayfa yok!");
+        res.end(adminIp + " - " + req.socket.remoteAddress+ " - "+ req.ip);
         adminIp = null;
     }
 })
