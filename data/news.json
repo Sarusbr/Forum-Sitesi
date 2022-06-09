@@ -1,0 +1,27 @@
+[
+    {
+        "title":"Card title Lorem",
+        "summary":"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img":"https://www.klasiksanatlar.com/img/sayfalar/b/1_1598452306_resim.png",
+        "date":"09.06.2022"
+    },
+    {
+        "title":"Card title Lorem",
+        "summary":"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img":"https://www.dunyaatlasi.com/wp-content/uploads/2018/09/resim-tablo-nasil-okunur-1280x720.jpg",
+        "date":"09.06.2022"
+    },
+    {
+        "title":"Card title Lorem",
+        "summary":"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img":"https://www.egoistyazar.com/upload/images/posts/ademin-yarat%C4%B1l%C4%B1%C5%9F%C4%B1.png",
+        "date":"09.06.2022"
+    },
+    {
+        "title":"Card title Lorem",
+        "summary":"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img":"https://www.turkcebilgi.com/uploads/media/resim/mona_lisa.jpg",
+        "date":"09.06.2022"
+    }
+
+]

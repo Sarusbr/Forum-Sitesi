@@ -7,7 +7,8 @@ var app = new Vue({
       myscreen:0,
       username:"",
       password:"",
-      password2:""
+      password2:"",
+      news:[]
     },
     methods:{
       changeMod(){
@@ -16,27 +17,7 @@ var app = new Vue({
         body.classList.toggle("bg-dark-body");
         body.classList.toggle("bg-light");
       },
-      getScrollbarWidth() {
-        const outer = document.createElement('div');
-        outer.style.visibility = 'hidden';
-        outer.style.overflow = 'scroll'; // forcing scrollbar to appear
-        outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-        document.body.appendChild(outer);
-      
-        // Creating inner element and placing it in the container
-        const inner = document.createElement('div');
-        outer.appendChild(inner);
-      
-        // Calculating difference between container's full width and the child width
-        const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
-      
-        // Removing temporary elements from the DOM
-        outer.parentNode.removeChild(outer);
-      
-        return scrollbarWidth;
-      },
       login(){
-
         let mydata = {
           username: this.username,
           password: this.password
@@ -50,11 +31,21 @@ var app = new Vue({
         })
         .then(response => response.json())
         .then(json => {
-          if(json.status) alert("giriş başarılı!");
-          else alert("Başarısız!!");
+          console.log(json);
+          if(json.status){
+            alert("giriş başarılı!");
+            $('#SingInModal').modal('hide');
+          }
+          else {
+            if(json.link == null){
+              alert("Başarısız!!");
+            }
+            else{
+              window.location.href = json.link;
+            }
+          }
         })
-
-
+        
       },
       register(){
         if(this.password == this.password2){
@@ -72,7 +63,10 @@ var app = new Vue({
           })
           .then(response => response.json())
           .then(json => {
-            if(json.status) alert("kayıt başarılı!");
+            if(json.status) {
+              alert("kayıt başarılı!");
+              $('#SingUpModal').modal('hide');
+            }
             else alert("Bu kullancı adı zaten mevcut!");
           })
         }
@@ -83,5 +77,14 @@ var app = new Vue({
       setInterval(() => {
         this.myscreen = window.innerWidth;
       },300);
+      fetch('/getNews', {
+        method: "POST",
+        body: "",
+        headers: {"Content-type": "application/json"}
+      })
+      .then(response => response.json())
+      .then(json => {
+        this.news = json;
+      })
     }
   })

@@ -17,7 +17,7 @@
                 <div class="modal-content bg-dark text-light">
                     <div class="modal-header bg-dark text-light">
                         <h5 class="modal-title">Giriş yap</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"  class="text-white">&times;</span>
                         </button>
                     </div>
@@ -123,117 +123,39 @@
             <div class="row">
                 <div class="col-lg-8 mb-3">
                     <div class="card bg-secondary border-bottom">
-
                         <div class="card-header mybg-dark3 text-white border-bottom border-secondary">
-                            Lorem, ipsum.(forum)
+                            Haberler
                         </div>
-                        
                         <ul class="list-group list-group-flush">
-
-                            <li class="list-group-item bg-dark">
+                            <li class="list-group-item bg-dark" v-for="item in news">
                                 <div class="card overflow-hidden crs-pointer select-react p-0 bg-dark text-white border-secondary">
-
                                     <div class="row news-maxsize" v-if="myscreen >= 768">
                                         <div class="col-4 p-0 card-body position-relative overflow-hidden">
-                                            <img class="obj-fit-cover h-100 w-100" src="https://www.klasiksanatlar.com/img/sayfalar/b/1_1598452306_resim.png" alt="Card image cap">
+                                            <img class="obj-fit-cover h-100 w-100" :src="item.img" alt="Card image cap">
                                         </div>
                                         <div class="col-8 card-body">
-                                            <h5 class="card-title">Card title Lorem</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            <h5 class="card-title">{{item.title}}</h5>
+                                            <p class="card-text">{{item.summary}}</p>
+                                            <p class="card-text"><small class="text-muted">{{item.data}}</small></p>
                                         </div>
                                     </div>
                                     <div class="news-maxsize-mobile" v-if="myscreen < 768">
-                                        <img class="card-img-top h-40 obj-fit-cover" src="https://www.klasiksanatlar.com/img/sayfalar/b/1_1598452306_resim.png" alt="Card image cap">
+                                        <img class="card-img-top h-40 obj-fit-cover" :src="item.img" alt="Card image cap">
                                         <div class="card-body h-60 align-hori overflow-hidden">
-                                          <h5 class="card-title w-100">Card title Lorem</h5>
-                                          <p class="card-text w-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ea non architecto laudantium tempora quisquam tenetur expedita repellendus. Possimus, vitae! This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                          <p class="card-text w-100"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                          <h5 class="card-title w-100">{{item.title}}</h5>
+                                          <p class="card-text w-100">{{item.summary}}</p>
+                                          <p class="card-text w-100"><small class="text-muted">{{item.data}}</small></p>
                                         </div>
                                     </div>
-
                                 </div>
                             </li>
-
-                            <li class="list-group-item bg-dark">
-                                <div class="card overflow-hidden crs-pointer select-react p-0 bg-dark text-white border-secondary">
-
-                                    <div class="row news-maxsize" v-if="myscreen >= 768">
-                                        <div class="col-4 p-0 card-body position-relative overflow-hidden">
-                                            <img class="obj-fit-cover h-100 w-100" src="https://www.dunyaatlasi.com/wp-content/uploads/2018/09/resim-tablo-nasil-okunur-1280x720.jpg" alt="Card image cap">
-                                        </div>
-                                        <div class="col-8 card-body">
-                                            <h5 class="card-title">Card title Lorem</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                    <div class="news-maxsize-mobile" v-if="myscreen < 768">
-                                        <img class="card-img-top h-40 obj-fit-cover" src="https://www.dunyaatlasi.com/wp-content/uploads/2018/09/resim-tablo-nasil-okunur-1280x720.jpg" alt="Card image cap">
-                                        <div class="card-body h-60 align-hori overflow-hidden">
-                                          <h5 class="card-title w-100">Card title Lorem</h5>
-                                          <p class="card-text w-100">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                          <p class="card-text w-100"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-dark">
-                                <div class="card overflow-hidden crs-pointer select-react p-0 bg-dark text-white border-secondary">
-                                    <div class="row news-maxsize" v-if="myscreen >= 768">
-                                        <div class="col-4 p-0 card-body overflow-hidden">
-                                            <img class="obj-fit-cover h-100 w-100" src="https://www.egoistyazar.com/upload/images/posts/ademin-yarat%C4%B1l%C4%B1%C5%9F%C4%B1.png" alt="Card image cap">
-                                        </div>
-                                        <div class="col-8 card-body">
-                                            <h5 class="card-title">Card title Lorem</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                    <div class="news-maxsize-mobile" v-if="myscreen < 768">
-                                        <img class="card-img-top h-40 obj-fit-cover" src="https://www.egoistyazar.com/upload/images/posts/ademin-yarat%C4%B1l%C4%B1%C5%9F%C4%B1.png" alt="Card image cap">
-                                        <div class="card-body h-60 align-hori overflow-hidden">
-                                          <h5 class="card-title w-100">Card title Lorem</h5>
-                                          <p class="card-text w-100">This is a wider card with supporting text below as a natural lorem40 lead-in to additional content. This content is a little bit longer.</p>
-                                          <p class="card-text w-100"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-dark">
-                                <div class="card overflow-hidden crs-pointer select-react p-0 bg-dark text-white border-secondary">
-
-                                    <div class="row news-maxsize" v-if="myscreen >= 768">
-                                        <div class="col-4 p-0 card-body overflow-hidden">
-                                            <img class="obj-fit-cover h-100 w-100" src="https://www.turkcebilgi.com/uploads/media/resim/mona_lisa.jpg" alt="Card image cap">
-                                        </div>
-                                        <div class="col-8 card-body">
-                                            <h5 class="card-title">Card title Lorem</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                    <div class="news-maxsize-mobile" v-if="myscreen < 768">
-                                        <img class="card-img-top h-40 obj-fit-cover" src="https://www.turkcebilgi.com/uploads/media/resim/mona_lisa.jpg" alt="Card image cap">
-                                        <div class="card-body h-60 align-hori overflow-hidden">
-                                          <h5 class="card-title w-100">Lorem ipsum dolor sit amet consectetur.</h5>
-                                          <p class="card-text w-100">This is a wider card with supporting text below as a natural lorem40 lead-in to additional content. This content is a little bit longer.asd</p>
-                                          <p class="card-text w-100"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
 
-
+                    <div class="btn btn-primary mb-3 w-100">Soru sor</div>
                     <div class="card mb-3 text-white bg-secondary">
                         <div class="card-header mybg-dark3 border-secondary">
                             Lorem, ipsum.{{myscreen}}
