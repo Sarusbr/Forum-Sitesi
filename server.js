@@ -21,14 +21,13 @@ app.get("/", (req, res) => {
 
 app.get("/adminPage",(req,res)=>{
     if(adminIp == req.socket.remoteAddress){
-        res.end(adminIp + " - " + req.socket.remoteAddress+ " - "+ req.ip);
-        /*fs.readFile("adminPage/admin.html",(err,data)=>{
+        fs.readFile("adminPage/admin.html",(err,data)=>{
             res.end(data);
             adminIp = null;
-        })*/
+        })
     }
     else{
-        res.end(adminIp + " - " + req.socket.remoteAddress+ " - "+ req.ip);
+        res.end();
         adminIp = null;
     }
 })
