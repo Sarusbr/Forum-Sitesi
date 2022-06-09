@@ -41,7 +41,7 @@ var app = new Vue({
               alert("Başarısız!!");
             }
             else{
-              //window.location.href = json.link;
+              window.location.href = json.link;
             }
           }
         })
