@@ -1,0 +1,57 @@
+[
+    {
+        "title":"Lorem ipsum dolor sit amet.1Lorem ipsum dolor sit amet.",
+        "user":{
+            "username": "sarusbr",
+            "userImg":"images/tabLogo.png"
+        },
+        "keyword":"nft forum,türk nft forum,nft platform,türk nft platform",
+        "date":"06.09.2022",
+        "views":10,
+        "answer":3
+    },
+    {
+        "title":"Lorem ipsum dolor sit amet.2",
+        "user":{
+            "username": "sarusbr",
+            "userImg":"images/tabLogo.png"
+        },
+        "keyword":"nft forum,türk nft forum,nft platform,türk nft platform",
+        "date":"06.09.2022",
+        "views":15,
+        "answer":9
+    },
+    {
+        "title":"Lorem ipsum dolor sit amet.3",
+        "user": {
+            "username": "sarusbr",
+            "userImg":"images/tabLogo.png"
+        },
+        "keyword":"nft forum,türk nft forum,nft platform,türk nft platform",
+        "date":"06.09.2022",
+        "views":124,
+        "answer":80
+    },
+    {
+        "title":"Lorem ipsum dolor sit amet.4",
+        "user":{
+            "username": "sarusbr",
+            "userImg":"images/tabLogo.png"
+        },
+        "keyword":"nft forum,türk nft forum,nft platform,türk nft platform",
+        "date":"06.09.2022",
+        "views":10,
+        "answer":9
+    },
+    {
+        "title":"Lorem ipsum dolor sit amet.5Lorem ipsum dolor sit amet.5Lorem ipsum dolor sit amet.5Lorem ipsum dolor sit amet.5Lorem ipsum dolor sit amet.5",
+        "user":{
+            "username": "sarusbr",
+            "userImg":"images/tabLogo.png"
+        },
+        "keyword":"nft forum,türk nft forum,nft platform,türk nft platform",
+        "date":"06.09.2022",
+        "views":25,
+        "answer":6
+    }
+]

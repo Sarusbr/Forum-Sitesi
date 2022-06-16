@@ -10,6 +10,7 @@
     <title>Türk NFT Platformu</title>
 </head>
 <body class="mybg-dark4">
+    
     <div id="app">
         <!--Giriş Kısmı popup-->
         <div id="SingInModal" class="modal fade"  role="dialog">
@@ -89,27 +90,27 @@
             </div>
         </nav>
         
-        <nav class="navbar navbar-expand-md sticky-top navbar-dark mybg-dark3">
+        <nav class="navbar navbar-expand-md sticky-top navbar-dark shadow mybg-dark3">
             <div class="container position-relative">
                 <button id="navbarHideButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav user-select-none">
-                        <li class="nav-item crs-pointer" :class="selectedPage==0?'active':''">
-                            <a class="nav-link" @click="selectedPage=0">NFT nedir?</a>
+                        <li class="nav-item crs-pointer">
+                            <a class="nav-link">NFT nedir?</a>
                         </li>
-                        <li class="nav-item crs-pointer" :class="selectedPage==1?'active':''">
-                            <a class="nav-link" @click="selectedPage=1">Haberler</a>
+                        <li class="nav-item crs-pointer">
+                            <a class="nav-link" href="/">Haberler</a>
                         </li>
-                        <li class="nav-item crs-pointer" :class="selectedPage==2?'active':''">
-                            <a class="nav-link" @click="selectedPage=2">Forum</a>
+                        <li class="nav-item crs-pointer active">
+                            <a class="nav-link" href="/forum">Forum</a>
                         </li>
-                        <li class="nav-item crs-pointer" :class="selectedPage==3?'active':''">
-                            <a class="nav-link" @click="selectedPage=3" >Hakkımızda</a>
+                        <li class="nav-item crs-pointer">
+                            <a class="nav-link">Hakkımızda</a>
                         </li>
-                        <li class="nav-item crs-pointer" :class="selectedPage==4?'active':''">
-                            <a class="nav-link" @click="selectedPage=4">İletişim</a>
+                        <li class="nav-item crs-pointer">
+                            <a class="nav-link">İletişim</a>
                         </li>
                     </ul>
                 </div>
@@ -122,33 +123,60 @@
         <div id="contentBox" class="container p-3">
             <div class="row">
                 <div class="col-lg-8 mb-3">
-                    <div class="card bg-secondary border-bottom">
+                    <div class="card border-bottom">
                         <div class="card-header mybg-dark3 text-white border-bottom border-secondary">
-                            Haberler
+                            Forum
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-dark" v-for="item in news">
-                                <div class="card overflow-hidden crs-pointer select-react p-0 bg-dark text-white border-secondary">
-                                    <div class="row news-maxsize" v-if="myscreen >= 768">
-                                        <div class="col-4 p-0 card-body position-relative overflow-hidden">
-                                            <img class="obj-fit-cover h-100 w-100" :src="item.img" alt="Card image cap">
+                        <ul class="list-group bg-dark list-group-flush">
+                            <li class="list-group-item p-0 bg-transparent" v-for="item in forums">
+                                <div class="row w-100 m-0 my-3 " style="min-height: 50px;">
+                                    <div class="forumImg text-center px-2 mt-2 m-0"><img class="obj-fit-cover shadow w-100 rounded-circle" :src="item.user.userImg" alt=""></div>
+                                    <div class="forumContent p-0 py-2 pl-2">
+                                        <div class="w-100  p-0 m-0">
+                                            <p class="m-0 p-0 text-white">{{item.title}}</p>
                                         </div>
-                                        <div class="col-8 card-body">
-                                            <h5 class="card-title">{{item.title}}</h5>
-                                            <p class="card-text">{{item.summary}}</p>
-                                            <p class="card-text"><small class="text-muted">{{item.data}}</small></p>
-                                        </div>
+                                        <div class="w-100 h-25 text-muted f-size1">{{item.user.username+" | "+item.date}}{{myscreen < 768 ? " | Cevaplar: "+item.answer:""}}</div>
                                     </div>
-                                    <div class="news-maxsize-mobile" v-if="myscreen < 768">
-                                        <img class="card-img-top h-40 obj-fit-cover" :src="item.img" alt="Card image cap">
-                                        <div class="card-body h-60 align-hori overflow-hidden">
-                                          <h5 class="card-title w-100">{{item.title}}</h5>
-                                          <p class="card-text w-100">{{item.summary}}</p>
-                                          <p class="card-text w-100"><small class="text-muted">{{item.data}}</small></p>
+                                    <div class="formInfo text-muted">
+                                        <div class="row w-100 m-0 h-100">
+                                            <div class="col-6 p-0 m-0 text-center align-self-center">
+                                                <div class="f-size3">Cevaplar: {{item.answer}}</div>
+                                                <div class="f-size1">Görüntülenme: {{item.views}}</div>
+                                            </div>
+                                            <div class="col-6 p-0 m-0 text-center align-self-center">
+                                                <p>{{findDate(item.date)}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
+                            <!-- <li class="list-group-item p-0 bg-transparent" v-for="item in forums">
+                                <div class="row w-100 m-0" style="height: 80px;">
+                                    <div class="col-1 text-center px-2 align-self-center m-0"><img class="obj-fit-cover shadow w-100 rounded-circle" :src="item.user.userImg" alt=""></div>
+                                    <div class="col-7 p-0 py-2 pl-2">
+                                        <div class="w-100 h-75 p-0 m-0">
+                                            <p class="m-0 p-0 text-white">{{item.title}}</p>
+                                        </div>
+                                        <div class="w-100 h-25 text-muted f-size1">{{item.user.username+" / "+item.date}}</div>
+                                    </div>
+                                    <div class="col-4 h-100 w-100 p-0 text-muted">
+                                        <div class="row w-100 m-0 h-100">
+                                            <div class="col-6 p-0 m-0 text-center align-self-center">
+                                                <div class="f-size3">Cevaplar:{{item.answer}}</div>
+                                                <div class="f-size1">Görüntülenme:{{item.views}}</div>
+                                            </div>
+                                            <div class="col-6 p-0 m-0 text-center align-self-center">
+                                                <p>{{findDate(item.date)}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+                            
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -195,6 +223,7 @@
         
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>var pageID=2;</script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

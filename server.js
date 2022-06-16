@@ -12,8 +12,14 @@ app.use(express.static("frontend/"))
 /*app.use(express.limit('5M'));  Dosya yükleme limitni 5mb yapıyor muhtemelen  */
 
 app.get("/", (req, res) => {
-    console.log(req.ip)
-    fs.readFile("frontend/forumTemplate.html", (err, data) => {
+    fs.readFile("frontend/news.html", (err, data) => {
+        res.write(data);
+        res.end();
+    })
+})
+
+app.get("/forum", (req, res) => {
+    fs.readFile("frontend/forum.html", (err, data) => {
         res.write(data);
         res.end();
     })
@@ -81,5 +87,13 @@ app.post("/register", (req, res) => { //kullanıcı kayıt api
 app.post("/getNews", (req, res) => {
     fs.readFile("data/news.json", "utf8", (err, data) => {
         res.end(data);
+    })
+})
+
+app.post("/getForums",(req,res)=>{ 
+// bu kısımda bir json istenecek ve jsondan gelen bilgileye göre hangi veriden başlanıp hangisine kadar olduğu alınacak
+    fs.readFile("data/forums.json", "utf8", (err, data) => {
+        res.write(data);
+        res.end();
     })
 })
