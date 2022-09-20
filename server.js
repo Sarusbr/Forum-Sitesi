@@ -2,13 +2,15 @@ var express = require("express");
 var app = express();
 var fs = require("fs");
 var bodyParser = require("body-parser");
-
+//test
 app.listen(process.env.PORT || 80);
 
 var adminIp;
+var TestIp;
 
 app.use(bodyParser.json()) //req.body çalışması için gerekli
 app.use(express.static("frontend/"))
+
 /*app.use(express.limit('5M'));  Dosya yükleme limitni 5mb yapıyor muhtemelen  */
 
 app.get("/", (req, res) => {
